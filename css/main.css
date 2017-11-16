@@ -1,21 +1,28 @@
-/*
- * Estilos de tu proyecto
- */
+body {
+    font-family: Arial;
+}
  /*menu vale*/
- .logo-lab{
- 	width: 20%;
+.logo-lab{
+ 	width: 10em;
+    align-items: center;
  }
- button{
+.logo{
+ 	flex: 2 80%;
+    text-align: center;
+ }
+#btn{
     width: 40px;
     background-color: #fff;
     border: none;
+
+
  }
- nav{
+nav{
  	width: 60%;
  	margin-left: 20%;
  	text-align: center;
  }
- ul{
+ul{
  	list-style: none;
  }
 a{
@@ -31,7 +38,45 @@ li:hover{
 }
 .enable-menu{
 	display: block;
+    position: absolute;
 }
 .disabled-menu{
 	display:none;
+}
+
+/*estilos de tab menu*/
+
+div.tab {
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+div.tab button:hover {
+    background-color: #ddd;
+}
+div.tab button.active {
+    border-bottom:3px solid #F7B314;
+    font-weight: bold;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+
+}
+.overview{
+    display: block;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
 }
