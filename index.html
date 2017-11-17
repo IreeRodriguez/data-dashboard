@@ -34,7 +34,16 @@
             <p>Datos Generales</p>
           </div>
           <div id="students" class="tabcontent">
-            <p>Datos de estudiantes</p>
+            <div class="filtro">
+                <button type="button" name="button" onclick="search(data,'SCL','2017-2','students',true)">Activas</button>
+                <button type="button" name="button" onclick="search(data,'SCL','2017-2','students',false)">Inactivas</button>
+
+                <!-- <input id="active" type="checkbox" name="active" value="active">Activas
+                <input type="checkbox" name="inactivas" value="inactivas">Inactivas -->
+            </div>
+            <div id="datagirls">
+
+            </div>
           </div>
           <div id="Teachers" class="tabcontent">
             <p>Datos de profesores.</p>

@@ -91,10 +91,15 @@ header{
 .girl{
     margin: 1em;
     border: 2px solid red;
+    display: flex;
+    padding: 1em;
 }
 
 .girl div img{
     width: 7em;
     height: 7em;
     object-fit: cover;
+}
+.girl div{
+    margin-right: 1em;
 }
