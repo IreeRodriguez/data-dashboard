@@ -3,7 +3,7 @@
  */
 
 // Puedes hacer uso de la base de datos a través de la variable `data`
-//console.log(data);
+// console.log(data[AQP]);
 /*menu hamburgesa*/
 var boton=document.getElementById('btn');
 

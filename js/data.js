@@ -5130,3 +5130,7 @@ var data = {
     }
   }
 };
+var dato = 'AQP';
+var search = data[dato]['2016-2'];
+
+console.log(search);
