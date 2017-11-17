@@ -5135,30 +5135,27 @@ var santiago = 'SCL';
 // var search = data[santiago]['2017-2']['students'];
 
 // console.log(search);
-function search(data,city,gen,students) {
+function search(data,city,gen,students,status) {
     var students = data[city][gen][students];
 
     var divStudents= document.getElementById('students');
 
     for(var i=0; i < students.length; i++){
-        var textStudents = document.createElement('h3');
-        var divGirl = document.createElement('div');
-        var photo = document.createElement('img');
-        photo.setAttribute('src', students[i].photo);
-        var pic = document.createElement('div');
-        divGirl.classList.add('girl');
-        pic.appendChild(photo);
-        textStudents.textContent = students[i].name;
-        divGirl.appendChild(pic);
-        divGirl.appendChild(textStudents);
-        divStudents.appendChild(divGirl);
+        if(students[i].active===status){
+            var textStudents = document.createElement('h3');
+            var divGirl = document.createElement('div');
+            var photo = document.createElement('img');
+            photo.setAttribute('src', students[i].photo);
+            var pic = document.createElement('div');
+            divGirl.classList.add('girl');
+            pic.appendChild(photo);
+            textStudents.textContent = students[i].name;
+            divGirl.appendChild(pic);
+            divGirl.appendChild(textStudents);
+            divStudents.appendChild(divGirl);
+        }
+
     };
-
-    // var textStudents = document.createElement('p');
-    // var divStudents= document.getElementById('students');
-    // textStudents.textContent=students;
-    // divStudents.appendChild(textStudents);
-
 }
 
-var prueba = search(data,'SCL','2017-2','students');
+var prueba = search(data,'SCL','2017-2','students',true);
