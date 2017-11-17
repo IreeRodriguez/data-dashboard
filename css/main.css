@@ -86,4 +86,15 @@ div.tab button.active {
 header{
     display: flex;
     justify-content: flex-end;
+    padding: 0 2em 0;
+}
+.girl{
+    margin: 1em;
+    border: 2px solid red;
+}
+
+.girl div img{
+    width: 7em;
+    height: 7em;
+    object-fit: cover;
 }

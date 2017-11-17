@@ -4747,7 +4747,6 @@ var data = {
           'active': false,
           'sprints': []
         },
-        { },
         {
           'name': 'Jada Curgenuer',
           'photo': 'http://dummyimage.com/133x195.png/cc0000/ffffff',
@@ -5006,7 +5005,6 @@ var data = {
             }
           ]
         },
-        { },
         {
           'name': 'Julieta Readhead',
           'photo': 'http://dummyimage.com/119x227.png/ff4444/ffffff',
@@ -5130,7 +5128,37 @@ var data = {
     }
   }
 };
-var dato = 'AQP';
-var search = data[dato]['2016-2'];
+var arequipa = 'AQP';
+var mexico = 'CDMX';
+var lima = 'LIM';
+var santiago = 'SCL';
+// var search = data[santiago]['2017-2']['students'];
 
-console.log(search);
+// console.log(search);
+function search(data,city,gen,students) {
+    var students = data[city][gen][students];
+
+    var divStudents= document.getElementById('students');
+
+    for(var i=0; i < students.length; i++){
+        var textStudents = document.createElement('h3');
+        var divGirl = document.createElement('div');
+        var photo = document.createElement('img');
+        photo.setAttribute('src', students[i].photo);
+        var pic = document.createElement('div');
+        divGirl.classList.add('girl');
+        pic.appendChild(photo);
+        textStudents.textContent = students[i].name;
+        divGirl.appendChild(pic);
+        divGirl.appendChild(textStudents);
+        divStudents.appendChild(divGirl);
+    };
+
+    // var textStudents = document.createElement('p');
+    // var divStudents= document.getElementById('students');
+    // textStudents.textContent=students;
+    // divStudents.appendChild(textStudents);
+
+}
+
+var prueba = search(data,'SCL','2017-2','students');
