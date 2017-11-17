@@ -10,45 +10,36 @@ body {
  	flex: 2 80%;
     text-align: center;
  }
-#btn{
-    width: 40px;
-    background-color: #fff;
-    border: none;
-
-
- }
-nav{
- 	text-align: right;
- }
 ul{
- 	list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    padding: 0px;
+    margin:0px;
+    list-style:none;
 
-li{
+}
+#menu{
+    margin:auto;
+    width: 3em;
+
+}
+.nav li a{
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
     display: block;
-    padding: 0.5em;
-
+    text-decoration: none;
+    
 }
-a{
-	text-decoration: none;
-
+.nav li a:hover{
+    background-color: #434343;
 }
-a:hover{
-	color:#000;
-}
-li:hover{
-	background-color: yellow;
-
-}
-.enable-menu{
-	display: block;
+.nav li ul{/*todos los submenus desaparecen*/
+    display: none;
     position: absolute;
-    top: 3em;
+    min-width: 40px;
+    right: 15px;    
 }
-.disabled-menu{
-	display:none;
+.nav li:hover>ul{
+    display: block;
 }
 
 /*estilos de tab menu*/
