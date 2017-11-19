@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-      <header>
+      <header class="pad">
           <div class="logo">
               <img class="logo-lab" src="assets/images/logo-laboratoria.svg" alt="">
           </div>
-          <div>
+          <div class="language">
             <select name="" id="men_language">
               <option value="Language">Language</option>
               <option value="Spanish">Spanish</option>
@@ -32,38 +32,40 @@
           </div>
       </header>
       <section>
-          <div class="tab">
+          <div class="tab pad">
             <div id="menu_sprint">
-                <ul class="sprint">
-                    <li><a href="#">Santiago de chile <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
-                        <ul >
-                            <li><a href="#">2015-I</a></li>
-                                <li><a href="#">2015-II</a></li>
-                                <li><a href="#">2016-I</a></li>
-                                <li><a href="#">2016-II</a></li>
-                                <li><a href="#">2017-I</a></li><li><a href="#">2017-II</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
+                  <ul class="sprint">
+                      <li><a href="#"><b>Santiago de chile</b><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
+                          <ul >
+                              <li><a href="#">2015-I</a></li>
+                              <li><a href="#">2015-II</a></li>
+                              <li><a href="#">2016-I</a></li>
+                              <li><a href="#">2016-II</a></li>
+                              <li><a href="#">2017-I</a></li><li><a href="#">2017-II</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
             <button class="tablinks active" onclick="openSection(event, 'Overview')">Overview</button>
             <button class="tablinks" onclick="openSection(event, 'students')">Students</button>
             <button class="tablinks" onclick="openSection(event, 'Teachers')">Teachers</button>
           </div>
-          <div id="Overview" class="tabcontent overview">
-            <p>Datos Generales</p>
+          <div id="Overview" class="tabcontent overview pad">
+              <p>Datos Generales</p>
           </div>
-          <div id="students" class="tabcontent">
-            <div class="filtro">
-                <button type="button" name="button" onclick="search(data,'SCL','2017-2','students',true)">Activas</button>
-                <button type="button" name="button" onclick="search(data,'SCL','2017-2','students',false)">Inactivas</button>
-            </div>
-            <div id="datagirls">
+          <div id="students" class="tabcontent pad">
 
-            </div>
+              <div class="contenedor">
+                  <div class="filtro">
+                      <button id="active" type="button" name="button" onclick="search(data,'SCL','2017-2','students',true)">Activas</button>
+                      <button id="inactive" type="button" name="button" onclick="search(data,'SCL','2017-2','students',false)">Inactivas</button>
+                  </div>
+                  <div id="datagirls">
+                  </div>
+              </div>
+
           </div>
-          <div id="Teachers" class="tabcontent">
+          <div id="Teachers" class="tabcontent pad">
             <p>Datos de profesores.</p>
           </div>
       </section>

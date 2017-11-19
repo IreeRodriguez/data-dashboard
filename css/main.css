@@ -1,7 +1,21 @@
 body {
     font-family: Arial;
+    background-color: #F7F7F7;
+    margin: 0;
 }
  /*menu vale*/
+.pad{
+    padding: 0 2em 0em;
+}
+header{
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+.language{
+    align-self: center;
+    margin-right: 1em;
+}
 .logo-lab{
  	width: 10em;
     align-items: center;
@@ -16,9 +30,10 @@ ul{
     list-style:none;
 }
 #menu{
-    margin:auto;
+    margin:0.3em 0 0;
     width: 3em;
     background-color: #fff;
+
 }
 .img-menu{
     width: 119%;
@@ -48,17 +63,18 @@ ul{
 .nav li:hover>ul{
     display: block;
 }
-#men_language{
-    height:30%;
-}
+/*#men_language{
+    height:auto;
+}*/
 /*estilos de tab menu*/
 #menu_sprint{
-    margin:auto;
+    /*display: inline-block;*/
     width: 12em;
+    background-color: #E1E1E1;
 
 }
 .sprint li a{
-    background-color: #fff;
+    background-color: #E1E1E1;
     color: #000;
     padding: 10px 15px;
     display: block;
@@ -67,7 +83,7 @@ ul{
 
 }
 .sprint li a:hover{
-    background-color: #fff;
+    background-color: #F7F7F7;
 }
 .sprint li ul{/*todos los submenus desaparecen*/
     display: none;
@@ -81,7 +97,7 @@ ul{
 
 div.tab {
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #E1E1E1;
 }
 div.tab button {
     background-color: inherit;
@@ -102,23 +118,46 @@ div.tab button.active {
 }
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+
 
 }
 .overview{
     display: block;
 }
-
-header{
+.contenedor{
     display: flex;
-    justify-content: flex-end;
-    padding: 0 2em 0;
+    justify-content: space-around;
+    padding: 2em 0 0;
 }
+
 .girl{
-    margin: 1em;
+    margin: 0 1em 1em;
     border: 2px solid red;
     display: flex;
     padding: 1em;
+    border-radius: 0.5em;
+}
+#datagirls{
+    flex: 2 80%;
+}
+.filtro{
+    flex: 1 10%;
+    flex-flow: column;
+}
+.filtro>*{
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.filtro button:hover{
+    background-color: #ddd;
+}
+
+.active {
+    border-bottom:2px solid #F7B314;
+    font-weight: bold;
 }
 
 .girl div img{
@@ -128,4 +167,20 @@ header{
 }
 .girl div{
     margin-right: 1em;
+}
+.cont >*{
+    display: inline-block;
+    margin-right:  1em;
+}
+.cont h4{
+    margin: 0;
+}
+.cont p{
+    margin: 0;
+    font-size: 0.9em;
+}
+.score{
+    background-color: #f1f1f1;
+    padding: 0.5em;
+    border-radius: 0.5em;
 }
