@@ -14,7 +14,6 @@ ul{
     padding: 0px;
     margin:0px;
     list-style:none;
-.img
 }
 #menu{
     margin:auto;
@@ -35,7 +34,7 @@ ul{
     padding: 10px 15px;
     display: block;
     text-decoration: none;
-    
+
 }
 .nav li a:hover{
     background-color: #434343;
@@ -44,13 +43,12 @@ ul{
     display: none;
     position: absolute;
     min-width: 40px;
-    right: 15px;    
+    right: 15px;
 }
 .nav li:hover>ul{
     display: block;
 }
 #men_language{
-    width: 20%:
     height:30%;
 }
 /*estilos de tab menu*/
@@ -75,7 +73,7 @@ ul{
     display: none;
     position: absolute;
     min-width: 40px;
-    
+
 }
 .sprint li:hover>ul{
     display: block;
