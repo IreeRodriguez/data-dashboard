@@ -5132,39 +5132,3 @@ var arequipa = 'AQP';
 var mexico = 'CDMX';
 var lima = 'LIM';
 var santiago = 'SCL';
-// var search = data[santiago]['2017-2']['students'];
-
-// console.log(search);
-// window.onload = function() {
-//     document.getElementById('active').checked = true;
-//
-// }
-
-
-function search(data,city,gen,students,status) {
-    var students = data[city][gen][students];
-
-    var divStudents= document.getElementById('datagirls');
-
-    for(var i=0; i < students.length; i++){
-        if(students[i].active===status){
-            var textStudents = document.createElement('h3');
-            var divGirl = document.createElement('div');
-            var photo = document.createElement('img');
-            var cont = document.createElement('div');
-            photo.setAttribute('src', students[i].photo);
-            var pic = document.createElement('div');
-            divGirl.classList.add('girl');
-            pic.appendChild(photo);
-            textStudents.textContent = students[i].name;
-            divGirl.appendChild(pic);
-            cont.appendChild(textStudents);
-            divGirl.appendChild(cont);
-            divStudents.appendChild(divGirl);
-        }
-
-    };
-}
-
-
-// var prueba = search(data,'SCL','2017-2','students',true);
