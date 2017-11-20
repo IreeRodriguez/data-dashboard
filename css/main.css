@@ -194,6 +194,7 @@ div.tab button.active {
 }
 .charts{
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
 }
 .charts>*{
