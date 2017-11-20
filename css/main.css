@@ -90,13 +90,16 @@ ul{
     position: absolute;
     min-width: 40px;
     z-index: 100;
-    overflow: visible;
-
+    list-style: none;
+    overflow: visible;   
 }
 .sprint li:hover>ul{
     display: block;
 }
-
+.sprint{
+    list-style: none;
+    padding:0px;
+}     
 div.tab {
     overflow: hidden;
     background-color: #E1E1E1;
