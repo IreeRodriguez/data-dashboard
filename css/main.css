@@ -214,4 +214,6 @@ p{
     background-color:  #F7B314;
     padding: 0.5em;
     border-radius: 0.5em;
+    display: block;
+    margin-top: 0.5em;
 }
