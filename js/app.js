@@ -55,6 +55,9 @@ function search(data,city,gen,students,status) {
             var divGirl = document.createElement('div');
             var photo = document.createElement('img');
             var cont = document.createElement('div');
+            var button = document.createElement('button');
+            button.textContent='Remove Student';
+            button.className='buttonRemove'
             cont.className='cont';
 			var divTech = document.createElement('div');
 			var divHse = document.createElement('div');
@@ -67,6 +70,7 @@ function search(data,city,gen,students,status) {
             textStudents.textContent = students[i].name;
             divGirl.appendChild(pic);
             cont.appendChild(textStudents);
+
             divGirl.appendChild(cont);
             divStudents.appendChild(divGirl);
 
@@ -100,6 +104,7 @@ function search(data,city,gen,students,status) {
 				divHse.appendChild(hseTitle);
 				cont.appendChild(divTech);
 				cont.appendChild(divHse);
+                cont.appendChild(button);
 			} else{
                 inactive.classList.add('active');
                 active.classList.remove('active');
@@ -121,6 +126,7 @@ function search(data,city,gen,students,status) {
 				divHse.appendChild(hseTitle);
 				cont.appendChild(divTech);
 				cont.appendChild(divHse);
+                cont.appendChild(button);
 
 			}
 
