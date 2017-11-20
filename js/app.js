@@ -1,6 +1,6 @@
 var countActive=0;
 var countInactive=0;
-var countsPerSprint = countStuff(data,'SCL','2017-2','students');
+// var countsPerSprint = countStuff(data,'SCL','2017-2','students');
 
 //cargar datos de google charts//
 google.charts.load('current', {packages: ['corechart', 'bar']});
@@ -9,9 +9,9 @@ google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(achievementChart);
 google.charts.setOnLoadCallback(gradesChart);
 //cargar las estudiantes actvias al cargar la pagina//
-window.onload = function () {
-	search(data,'SCL','2017-2','students',true);
-}
+// window.onload = function () {
+// 	search(data,'SCL','2017-2','students',true);
+// }
 
 //funcionalidad para le menu de tabs//
 function openSection(evt, seccion) {
@@ -126,7 +126,6 @@ function search(data,city,gen,students,status) {
 				divHse.appendChild(hseTitle);
 				cont.appendChild(divTech);
 				cont.appendChild(divHse);
-                cont.appendChild(button);
 
 			}
 
