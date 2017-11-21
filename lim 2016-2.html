@@ -35,18 +35,18 @@
           <div class="tab pad">
             <div id="menu_sprint">
                 <ul class="sprint">
-                    <li class="titulo"><a href="#"><b>Santiago de Chile 2017-II   </b><i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                    <li class="titulo"><a href="#"><b>Lima 2016-II   </b><i class="fa fa-caret-down" aria-hidden="true"></i></a>
                         <ul class="sprint" >
                             <li><a href="scl 2016-2.html">2016-II</a></li>
                             <li><a href="scl 2017-1.html">2017-I</a></li>
-                            <li><a href="#">2017-II</a></li>
+                            <li><a href="index.html">2017-II</a></li>
 
                             <li><b>Ciudad de Mexico</b></li>
                             <li><a href="cdmx 2017-1.html">2017-I</a></li>
                             <li><a href="cdmx 2017-2.html">2017-II</a></li>
 
                             <li><b>Lima</b></li>
-                            <li><a href="lim 2016-2.html">2016-II</a></li>
+                            <li><a href="#">2016-II</a></li>
                             <li><a href="lim 2017-1.html">2017-I</a></li>
                             <li><a href="lim 2017-2.html">2017-II</a></li>
 
@@ -86,8 +86,8 @@
 
               <div class="contenedor">
                   <div class="filtro">
-                      <button id="active" type="button" name="button" onclick="search(data,'SCL','2017-2','students',true)">Activas</button>
-                      <button id="inactive" type="button" name="button" onclick="search(data,'SCL','2017-2','students',false)">Inactivas</button>
+                      <button id="active" type="button" name="button" onclick="search(data,'LIM','2016-2','students',true)">Activas</button>
+                      <button id="inactive" type="button" name="button" onclick="search(data,'LIM','2016-2','students',false)">Inactivas</button>
                   </div>
                   <div id="datagirls">
                   </div>
@@ -114,12 +114,11 @@
     <script src="./js/app.js"></script>
     <script type="text/javascript">
 
-        var countsPerSprint = countStuff(data,'SCL','2017-2','students');
+        var countsPerSprint = countStuff(data,'LIM','2016-2','students');
 
         window.onload = function () {
-            search(data,'SCL','2017-2','students',true);
+            search(data,'LIM','2016-2','students',true);
         }
-
 
 
     </script>

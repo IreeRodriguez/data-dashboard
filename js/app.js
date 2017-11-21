@@ -395,7 +395,7 @@ function ratingChart() {
     var divActive = document.createElement('div');
     var active = document.createElement('h3');
     var container = document.getElementById('rating');
-    active.textContent=countsPerSprint.totalRatings / countsPerSprint.ratings.length;
+    active.textContent=(countsPerSprint.totalRatings / countsPerSprint.ratings.length).toFixed(2);
     var textActive = document.createElement('p');
     textActive.textContent='overall teacher rating';
     divActive.appendChild(active);
@@ -438,7 +438,7 @@ function jediChart() {
     var divActive = document.createElement('div');
     var active = document.createElement('h3');
     var container = document.getElementById('jedi');
-    active.textContent=countsPerSprint.totalJedi / countsPerSprint.jedi.length;
+    active.textContent=(countsPerSprint.totalJedi / countsPerSprint.jedi.length).toFixed(2);
     var textActive = document.createElement('p');
     textActive.textContent='overall jedi rating';
     divActive.appendChild(active);
