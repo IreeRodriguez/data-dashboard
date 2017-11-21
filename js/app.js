@@ -1,13 +1,13 @@
 var countActive=0;
 var countInactive=0;
 // var countsPerSprint = countStuff(data,'SCL','2017-2','students');
-
 //cargar datos de google charts//
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.load('current', {packages:['line']});
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(achievementChart);
 google.charts.setOnLoadCallback(gradesChart);
+// google.charts.setOnLoadCallback(ratingChart);
 //cargar las estudiantes actvias al cargar la pagina//
 // window.onload = function () {
 // 	search(data,'SCL','2017-2','students',true);
@@ -29,7 +29,6 @@ function openSection(evt, seccion) {
     document.getElementById(seccion).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
 
 //funcion para buscar dentro de la data la informacion de las students//
 function search(data,city,gen,students,status) {
@@ -135,12 +134,9 @@ function search(data,city,gen,students,status) {
     };
 }
 
-
-
-
-
 function countStuff(data,city,gen,students){
     var students = data[city][gen][students];
+    var ratings = data[city][gen]['ratings'];
     // console.log(students[0].sprints.length);
 
     var maxSprints = 0;
@@ -149,6 +145,7 @@ function countStuff(data,city,gen,students){
             maxSprints = students[i].sprints.length;
         }
     }
+
     // console.log(maxSprints);
     // console.log(countInactive);
 
@@ -156,13 +153,25 @@ function countStuff(data,city,gen,students){
     var passedCount = Array(maxSprints).fill(0);
     var techPerSprint = Array(maxSprints).fill(0);
     var hsePerSprint = Array(maxSprints).fill(0);
+    var teacherRating = Array(maxSprints).fill(0);
+    var jediRating = Array(maxSprints).fill(0);
+    var totalRating=0;
+    var totalJedi=0;
     // console.log(studentsPerSprint);
+    for(var i = 0; i < ratings.length; i++){
+        teacherRating[i] += ratings[i].teacher;
+        totalRating += ratings[i].teacher;
+        jediRating[i] += ratings[i].jedi;
+        totalJedi += ratings[i].jedi;
+    }
+
     for(var i = 0; i < students.length; i++){
         if(students[i].active===true){
             countActive++;
         } else {
             countInactive++;
         }
+
 
         for (var j = 0; j < students[i].sprints.length; j++){
 
@@ -173,10 +182,15 @@ function countStuff(data,city,gen,students){
             studentsPerSprint[j] += 1;
             techPerSprint[j] += students[i].sprints[j].score.tech;
             hsePerSprint[j] += students[i].sprints[j].score.hse;
+
         }
     }
-
+    // console.log(totalRating);
     var countsPerSprint = {
+        jedi: jediRating,
+        ratings: teacherRating,
+        totalRatings: totalRating,
+        totalJedi : totalJedi,
         students: studentsPerSprint,
         passed: passedCount,
         grades: {
@@ -354,4 +368,90 @@ function gradesChart() {
     // chart.draw(datos, google.charts.Column.convertOptions(options));
     container.appendChild(divActive);
     container.appendChild(divInactive);
+}
+
+function ratingChart() {
+    // Create the data table.
+    var datos = new google.visualization.DataTable();
+    datos.addColumn('string', 'Sprints');
+    datos.addColumn('number', 'Rating');
+
+    for (var i = 0; i < countsPerSprint.ratings.length; i++)
+    {
+        datos.addRow(['S' + (i + 1), countsPerSprint.ratings[i]]);
+    }
+
+    // Set chart options
+    var options = {
+                'title':'Teacher Rating',
+                'titleTextStyle': {
+                    color: 'black',
+                    fontSize: 20,
+                    },
+                'width':300,
+                'height':300,
+                'colors':'#FFC107'};
+
+    var divActive = document.createElement('div');
+    var active = document.createElement('h3');
+    var container = document.getElementById('rating');
+    active.textContent=countsPerSprint.totalRatings / countsPerSprint.ratings.length;
+    var textActive = document.createElement('p');
+    textActive.textContent='overall teacher rating';
+    divActive.appendChild(active);
+    divActive.appendChild(textActive);
+    divActive.className="score";
+
+
+
+
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.charts.Line(document.getElementById('rating'));
+    var url = chart.draw(datos, google.charts.Line.convertOptions(options));
+    // chart.draw(datos, google.charts.Column.convertOptions(options));
+    container.appendChild(divActive);
+}
+
+function jediChart() {
+    // Create the data table.
+    var datos = new google.visualization.DataTable();
+    datos.addColumn('string', 'Sprints');
+    datos.addColumn('number', 'Rating');
+
+    for (var i = 0; i < countsPerSprint.jedi.length; i++)
+    {
+        datos.addRow(['S' + (i + 1), countsPerSprint.jedi[i]]);
+    }
+
+    // Set chart options
+    var options = {
+                'title':'Jedi Rating',
+                'titleTextStyle': {
+                    color: 'black',
+                    fontSize: 20,
+                    },
+                'width':300,
+                'height':300,
+                'colors':'#FFC107'};
+
+    var divActive = document.createElement('div');
+    var active = document.createElement('h3');
+    var container = document.getElementById('jedi');
+    active.textContent=countsPerSprint.totalJedi / countsPerSprint.jedi.length;
+    var textActive = document.createElement('p');
+    textActive.textContent='overall jedi rating';
+    divActive.appendChild(active);
+    divActive.appendChild(textActive);
+    divActive.className="score";
+
+
+
+
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.charts.Line(document.getElementById('jedi'));
+    var url = chart.draw(datos, google.charts.Line.convertOptions(options));
+    // chart.draw(datos, google.charts.Column.convertOptions(options));
+    container.appendChild(divActive);
 }
